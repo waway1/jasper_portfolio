@@ -1,0 +1,85 @@
+/* CONTACT — footer, contact form, project case panel */
+/* contact form */
+.cform{max-width:640px;margin:0 0 clamp(50px,7vw,80px);display:grid;gap:16px}
+.cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cform label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--grey);display:block;margin-bottom:8px;}
+.cform input,.cform textarea{width:100%;background:var(--dark-2);border:1px solid #3A3B40;
+  border-radius:10px;color:#fff;font-family:inherit;font-size:.95rem;
+  padding:14px 16px;transition:border-color .25s;resize:vertical;}
+.cform input:focus,.cform textarea:focus{border-color:var(--blue);outline:none}
+.cform .send{justify-self:start;background:var(--blue);color:#fff;border:none;cursor:pointer;
+  border-radius:100px;padding:16px 36px;font-size:.95rem;font-weight:500;font-family:inherit;
+  transition:transform .2s,box-shadow .2s;display:inline-flex;gap:8px;align-items:center;}
+.cform .send:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(69,92,233,.35)}
+.cform .hint{font-size:.78rem;color:var(--grey)}
+@media(max-width:600px){.cform .row2{grid-template-columns:1fr}}
+/* ============================================================
+   PART 8 — CONTACT FOOTER
+   ============================================================ */
+.contact{background:var(--dark);color:#fff;
+  padding:clamp(100px,14vw,180px) clamp(22px,8vw,110px) 0;
+  border-radius:36px 36px 0 0;}
+.contact h2{font-weight:400;font-size:clamp(2.4rem,8vw,6rem);letter-spacing:-.02em;
+  line-height:1.1;max-width:900px;}
+.contact h2 .face{display:inline-flex;width:clamp(56px,8vw,96px);height:clamp(56px,8vw,96px);
+  border-radius:50%;background:#2A2B2F;vertical-align:middle;margin:0 10px;
+  align-items:center;justify-content:center;font-size:clamp(1.4rem,3vw,2.2rem);overflow:hidden;}
+.contact h2 .face img{width:100%;height:100%;object-fit:cover}
+.line-wrap{position:relative;margin:clamp(60px,9vw,110px) 0 clamp(50px,7vw,90px)}
+.line-wrap hr{border:none;border-top:1px solid #3A3B40}
+.git{position:absolute;right:clamp(4vw,10vw,14vw);top:50%;translate:0 -50%;
+  width:clamp(140px,16vw,196px);height:clamp(140px,16vw,196px);border-radius:50%;
+  background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;overflow:hidden;}
+.git::before{content:'';position:absolute;inset:0;border-radius:50%;background:var(--dark-2);
+  transform:translateY(101%);transition:transform .45s cubic-bezier(.4,0,0,1);}
+.git:hover::before{transform:none}
+.git span{position:relative;z-index:1}
+.contact .pills{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:clamp(90px,13vw,160px)}
+.contact .pill{border-color:#3A3B40;color:#fff}
+.contact-bottom{display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:26px;padding:0 0 34px;font-size:.85rem;}
+.cb-group{display:flex;gap:clamp(24px,5vw,64px);flex-wrap:wrap}
+.cb-group h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--grey);margin-bottom:10px;font-weight:400;}
+.cb-group p,.cb-group a{color:#fff}
+.cb-soc{display:flex;gap:20px}
+.cb-soc a{position:relative;padding-bottom:3px}
+.cb-soc a::after{content:'';position:absolute;left:50%;bottom:0;width:0;height:1px;
+  background:#fff;transition:width .3s,left .3s;}
+.cb-soc a:hover::after{width:100%;left:0}
+/* ============================================================
+   PROJECT CASE-STUDY PANEL (opens when a work row is clicked)
+   ============================================================ */
+#caseVeil{position:fixed;inset:0;background:rgba(16,17,20,.55);z-index:150;
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;}
+body.case-open #caseVeil{opacity:1;visibility:visible}
+#casePanel{position:fixed;left:50%;bottom:0;transform:translate(-50%,105%);
+  width:min(880px,94vw);max-height:88svh;overflow-y:auto;background:#fff;z-index:160;
+  border-radius:22px 22px 0 0;transition:transform .65s cubic-bezier(.76,0,.24,1);
+  padding:clamp(28px,5vw,54px);}
+body.case-open #casePanel{transform:translate(-50%,0)}
+body.case-open{overflow:hidden}
+#caseClose{position:sticky;top:0;float:right;width:46px;height:46px;border-radius:50%;
+  background:var(--dark);color:#fff;border:none;cursor:pointer;font-size:1.05rem;
+  transition:background .25s;z-index:2;}
+#caseClose:hover{background:var(--blue)}
+#casePanel .cat{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:12px;}
+#casePanel h3{font-weight:400;font-size:clamp(1.7rem,4.5vw,2.7rem);letter-spacing:-.02em;
+  margin-bottom:18px;}
+#caseMedia{aspect-ratio:16/9;border-radius:12px;margin:22px 0 26px;position:relative;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;}
+#caseMedia .inner{color:#fff;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-align:center;line-height:2;}
+#casePanel .desc{color:#4A4B50;font-size:1rem;max-width:640px;margin-bottom:22px}
+#casePanel .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+#casePanel .chip{font-size:.72rem;letter-spacing:.06em;color:#4A4B50;
+  border:1px solid var(--grey-2);border-radius:100px;padding:6px 15px;}
+#casePanel .ctas{display:flex;gap:12px;flex-wrap:wrap}
+#casePanel .cta{display:inline-flex;align-items:center;gap:8px;border-radius:100px;
+  padding:15px 30px;font-size:.92rem;font-weight:500;transition:transform .2s,box-shadow .2s;}
+#casePanel .cta.solid{background:var(--blue);color:#fff}
+#casePanel .cta.line{border:1px solid var(--grey-2);color:var(--dark)}
+#casePanel .cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(69,92,233,.22)}

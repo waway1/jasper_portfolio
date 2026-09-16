@@ -1,0 +1,155 @@
+/* SECTIONS — intro, work, showcase, services, skills, about, process, testimonials */
+/* ============================================================
+   PART 3 — INTRO STATEMENT
+   ============================================================ */
+.intro{padding:clamp(90px,14vw,170px) clamp(22px,8vw,110px);
+  display:grid;grid-template-columns:1.5fr .8fr;gap:clamp(30px,5vw,70px);}
+.intro h2{font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);line-height:1.45;}
+.intro .side{display:flex;flex-direction:column;gap:40px;align-items:flex-start}
+.intro .side p{font-size:1rem;color:#4A4B50;max-width:280px}
+.round-btn{width:clamp(150px,14vw,190px);height:clamp(150px,14vw,190px);border-radius:50%;
+  background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1rem;position:relative;overflow:hidden;}
+.round-btn::before{content:'';position:absolute;inset:0;border-radius:50%;
+  background:var(--blue);transform:translateY(101%);transition:transform .45s cubic-bezier(.4,0,0,1);}
+.round-btn:hover::before{transform:none}
+.round-btn span{position:relative;z-index:1}
+/* ============================================================
+   PART 4 — RECENT WORK (all 6 projects)
+   ============================================================ */
+.work{padding:0 clamp(22px,8vw,110px) clamp(80px,10vw,130px)}
+.work .lbl{font-size:.95rem;color:#4A4B50;margin-bottom:40px}
+.work-list{border-top:1px solid var(--grey-2)}
+.work-row{display:flex;justify-content:space-between;align-items:center;
+  padding:clamp(28px,4.5vw,52px) 10px;border-bottom:1px solid var(--grey-2);
+  cursor:pointer;transition:opacity .3s;}
+.work-list:hover .work-row{opacity:.35}
+.work-list .work-row:hover{opacity:1}
+.work-row h3{font-size:clamp(1.6rem,4.6vw,3.4rem);font-weight:400;letter-spacing:-.02em;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);}
+.work-row:hover h3{transform:translateX(-12px)}
+.work-row p{font-size:.95rem;color:#4A4B50;transition:transform .4s cubic-bezier(.22,1,.36,1);
+  text-align:right;flex-shrink:0;padding-left:20px;}
+.work-row:hover p{transform:translateX(12px)}
+
+#preview{position:fixed;width:340px;height:250px;pointer-events:none;z-index:60;
+  overflow:hidden;opacity:0;transform:scale(.6);transition:opacity .3s;border-radius:4px;}
+#preview.on{opacity:1}
+#preview .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .25s;}
+#preview .slide.cur{opacity:1}
+#preview .slide .inner{width:72%;text-align:center;color:#fff;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;line-height:2;}
+.pv1{background:linear-gradient(135deg,#0B1530,#2C3E7A)}
+.pv2{background:linear-gradient(135deg,#123B2E,#2E7D5B)}
+.pv3{background:linear-gradient(135deg,#3A1D5E,#7A4DBF)}
+.pv4{background:linear-gradient(135deg,#4A2308,#B65C1E)}
+.pv5{background:linear-gradient(135deg,#0E3A4A,#2589A8)}
+.pv6{background:linear-gradient(135deg,#3D0F23,#A83258)}
+
+#viewCursor{position:fixed;width:96px;height:96px;border-radius:50%;background:var(--blue);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:.95rem;
+  pointer-events:none;z-index:61;opacity:0;transition:opacity .25s;}
+#viewCursor.on{opacity:1}
+
+.more-wrap{display:flex;justify-content:center;margin-top:clamp(46px,6vw,80px)}
+.pill{border:1px solid var(--grey-2);border-radius:100px;padding:22px 44px;
+  font-size:1rem;position:relative;overflow:hidden;transition:color .3s,border-color .3s;
+  background:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;}
+.pill::before{content:'';position:absolute;inset:0;border-radius:100px;background:var(--blue);
+  transform:translateY(101%);transition:transform .45s cubic-bezier(.4,0,0,1);}
+.pill:hover{color:#fff;border-color:var(--blue)}
+.pill:hover::before{transform:none}
+.pill span{position:relative;z-index:1}
+/* ============================================================
+   PART 5 — PARALLAX SHOWCASE STRIP
+   ============================================================ */
+.showcase{height:52vh;min-height:340px;position:relative;overflow:hidden;background:var(--dark)}
+.showcase .layer{position:absolute;inset:-18% 0;background:
+  linear-gradient(120deg,#10131E 0%,#1C2C5E 45%,#455CE9 100%);
+  will-change:transform;display:flex;align-items:center;justify-content:center;}
+/* ✏️ replace .layer background with a wide screenshot:
+   <img src="images/showcase-wide.png"> inside .layer, object-fit:cover */
+.showcase .cap{position:relative;z-index:2;color:#fff;text-align:center;padding:0 20px}
+.showcase .cap h3{font-weight:400;font-size:clamp(1.4rem,3.6vw,2.4rem)}
+.showcase .cap p{color:#C9CFEA;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;margin-top:10px}
+/* ============================================================
+   PART 6 — SERVICES ("I can help you with…")
+   ============================================================ */
+.services{padding:clamp(90px,13vw,160px) clamp(22px,8vw,110px)}
+.services>.lbl{font-size:.95rem;color:#4A4B50;margin-bottom:clamp(40px,6vw,70px)}
+.svc{display:grid;grid-template-columns:120px 1fr 1.2fr;gap:clamp(20px,4vw,60px);
+  border-top:1px solid var(--grey-2);padding:clamp(34px,5vw,56px) 0;align-items:start;}
+.svc .n{font-size:1rem;color:var(--grey)}
+.svc h3{font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:-.01em}
+.svc p{color:#4A4B50;font-size:1rem;max-width:460px}
+.svc ul{list-style:none;margin-top:18px;font-size:.9rem;color:#4A4B50;
+  display:flex;flex-direction:column;gap:7px;}
+.svc li::before{content:'—';color:var(--blue);margin-right:10px}
+/* ============================================================
+   PART 7 — SKILLS STRIP
+   ============================================================ */
+.skills{background:#F4F4F5;padding:clamp(80px,10vw,130px) 0}
+.skills .strip{overflow:hidden;white-space:nowrap;border-top:1px solid var(--grey-2);
+  border-bottom:1px solid var(--grey-2);padding:18px 0;margin-bottom:clamp(56px,8vw,90px);}
+.skills .strip-track{display:inline-flex;animation:mq 22s linear infinite}
+.skills .strip-track span{font-size:1rem;color:#4A4B50;padding-right:48px;
+  display:inline-flex;align-items:center;gap:48px;}
+.skills .strip-track span::after{content:'✦';color:var(--blue);font-size:.8rem}
+.disc{max-width:1180px;margin:0 auto;padding:0 clamp(22px,6vw,80px);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(30px,5vw,60px);}
+.disc article{border-top:1px solid #D9DADC;padding-top:26px}
+.disc .n{font-size:.8rem;color:var(--grey);margin-bottom:18px;display:block}
+.disc h3{font-weight:500;font-size:1.35rem;margin-bottom:14px}
+.disc p{font-size:.95rem;color:#4A4B50;margin-bottom:16px}
+.disc ul{list-style:none;font-size:.9rem;color:#4A4B50;display:flex;flex-direction:column;gap:7px}
+.disc li::before{content:'—';color:var(--blue);margin-right:10px}
+/* ============================================================
+   PART 6b — ABOUT ME (photo + bio + facts)
+   ============================================================ */
+.aboutme{padding:clamp(90px,13vw,160px) clamp(22px,8vw,110px);
+  display:grid;grid-template-columns:.9fr 1.3fr;gap:clamp(36px,6vw,90px);align-items:start;}
+.aboutme .photo{aspect-ratio:4/5;background:#F0F0F1;border-radius:6px;position:relative;
+  overflow:hidden;}
+.aboutme .photo img{width:100%;height:100%;object-fit:cover}
+.aboutme .photo .ph{position:absolute;inset:0;margin:14px;border:1.5px dashed #D9DADC;
+  border-radius:6px;display:flex;flex-direction:column;gap:12px;align-items:center;
+  justify-content:center;color:var(--grey);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;text-align:center;}
+.aboutme .lbl{font-size:.95rem;color:#4A4B50;margin-bottom:28px}
+.aboutme h2{font-weight:400;font-size:clamp(1.7rem,3.8vw,2.7rem);letter-spacing:-.015em;
+  line-height:1.25;margin-bottom:26px;}
+.aboutme .bio p{color:#4A4B50;font-size:1.02rem;margin-bottom:16px;max-width:560px}
+.aboutme .bio strong{color:var(--dark);font-weight:500}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:44px;
+  border-top:1px solid var(--grey-2);padding-top:34px;}
+.facts h4{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);
+  font-weight:400;margin-bottom:8px;}
+.facts p{font-size:.95rem;color:var(--dark)}
+/* ============================================================
+   PART 6c — PROCESS (how I work)
+   ============================================================ */
+.process{background:var(--dark);color:#fff;padding:clamp(90px,13vw,160px) clamp(22px,8vw,110px);}
+.process .lbl{font-size:.95rem;color:var(--grey);margin-bottom:clamp(44px,6vw,70px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(26px,4vw,50px);}
+.step{border-top:1px solid #3A3B40;padding-top:26px}
+.step .n{font-size:.8rem;color:var(--blue);display:block;margin-bottom:16px}
+.step h3{font-weight:500;font-size:1.3rem;margin-bottom:12px}
+.step p{font-size:.93rem;color:#B9BABE}
+/* ============================================================
+   PART 7b — TESTIMONIALS
+   ============================================================ */
+.testi{padding:clamp(90px,13vw,160px) clamp(22px,8vw,110px)}
+.testi .lbl{font-size:.95rem;color:#4A4B50;margin-bottom:clamp(40px,6vw,64px)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.tcard{border:1px solid var(--grey-2);border-radius:10px;padding:34px 30px;
+  display:flex;flex-direction:column;gap:22px;transition:transform .3s,box-shadow .3s;}
+.tcard:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(28,29,32,.08)}
+.tcard .q{font-size:1.5rem;color:var(--blue);line-height:1}
+.tcard p.quote{font-size:1rem;color:#3A3B40;flex:1}
+.tcard .who{display:flex;align-items:center;gap:14px}
+.tcard .who .av{width:44px;height:44px;border-radius:50%;background:var(--grey-2);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;overflow:hidden;flex-shrink:0;}
+.tcard .who .av img{width:100%;height:100%;object-fit:cover}
+.tcard .who b{font-weight:500;font-size:.92rem;display:block}
+.tcard .who span{font-size:.8rem;color:var(--grey)}
