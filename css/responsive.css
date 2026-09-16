@@ -1,6 +1,6 @@
 /* RESPONSIVE — mobile layout + reduced motion */
 @media(max-width:820px){
-  .hero-photo{right:50%;transform:translateX(50%)!important;width:min(78vw,380px);height:60svh;opacity:.85}
+  .hero-photo{width:min(78vw,380px);height:60svh;opacity:.85}
   .role{top:10%}
   .loc{top:auto;bottom:26svh}
   .scroll-cue{display:none}

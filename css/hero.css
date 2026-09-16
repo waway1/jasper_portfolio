@@ -27,7 +27,7 @@
 .hero-nav a:hover::after{width:100%;left:0}
 .hero-body{flex:1;position:relative}
 
-.hero-photo{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+.hero-photo{position:absolute;left:0;right:0;bottom:0;margin-inline:auto;
   width:clamp(280px,38vw,500px);height:min(84svh,700px);
   background:transparent;overflow:hidden;will-change:transform;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
